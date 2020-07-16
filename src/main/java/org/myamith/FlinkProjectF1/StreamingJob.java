@@ -18,10 +18,13 @@
 
 package org.myamith.FlinkProjectF1;
 
+import org.apache.flink.api.common.functions.FilterFunction;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
+import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
+import pojo.Position;
 
 import java.util.Properties;
 
@@ -70,9 +73,28 @@ public class StreamingJob {
 		DataStream<String> stream = env
 				.addSource(new FlinkKafkaConsumer("testPositionTopic", new SimpleStringSchema(), properties));
 
-		stream.print();
+		DataStream<String> stream1 = stream.filter(new bigClosePriceFilter());
+
+		stream1.print();
 
 		// execute program
 		env.execute("Flink Streaming Java API Skeleton");
+	}
+
+	private static class bigClosePriceFilter implements FilterFunction<String> {
+
+		@Override
+		public boolean filter(String position) throws Exception {
+			try {
+				ObjectMapper om = new ObjectMapper();
+				Position posn = om.readValue(position, Position.class);
+
+				return posn.getClosePrice() > 499.0;
+			} catch (Exception e){
+				System.out.println(" Issue with filtering data ");
+				throw new Exception();
+			}
+
+		}
 	}
 }
