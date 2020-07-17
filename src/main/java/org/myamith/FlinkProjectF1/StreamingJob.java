@@ -91,9 +91,9 @@ public class StreamingJob {
 				ObjectMapper om = new ObjectMapper();
 				om.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
 				Position posn = om.readValue(position, Position.class);
-				System.out.println(posn.toString());
-				System.out.println(" Data in close price: "+posn.getClosePrice());
-				return  true;
+				//System.out.println(posn.toString());
+				//System.out.println(" Data in close price: "+posn.getClosePrice());
+				return  posn.getClosePrice() > 499.0;
 			} catch (Exception e){
 				e.printStackTrace();
 				System.out.println(" Issue with filtering data ");
