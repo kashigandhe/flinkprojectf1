@@ -88,7 +88,7 @@ public class StreamingJob {
 		public boolean filter(String position) throws Exception {
 			try {
 				ObjectMapper om = new ObjectMapper();
-				Position posn = om.readValue(position, Position.class);
+				Position posn = om.convertValue(position, Position.class);
 				System.out.println(posn.toString());
 				System.out.println(" Data in close price: "+posn.getClosePrice());
 				return  true;
