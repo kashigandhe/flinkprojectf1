@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f2cad430-a100-44c4-af31-67da41314e93" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/myamith/FlinkProjectF1/StreamingJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/myamith/FlinkProjectF1/StreamingJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pojo/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojo/Position.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594946612049</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="adding filter with chnages V4">
+      <created>1594947405726</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1594947405726</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -176,13 +183,14 @@
     <MESSAGE value="adding filter with chnages V1" />
     <MESSAGE value="adding filter with chnages V2" />
     <MESSAGE value="adding filter with chnages V3" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding filter with chnages V3" />
+    <MESSAGE value="adding filter with chnages V4" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding filter with chnages V4" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="318" y="69" key="CommitChangelistDialog2" timestamp="1594946611916">
+    <state x="318" y="69" key="CommitChangelistDialog2" timestamp="1594947405596">
       <screen x="0" y="23" width="1536" height="882" />
     </state>
-    <state x="318" y="69" key="CommitChangelistDialog2/0.23.1536.882@0.23.1536.882" timestamp="1594946611916" />
+    <state x="318" y="69" key="CommitChangelistDialog2/0.23.1536.882@0.23.1536.882" timestamp="1594947405596" />
     <state width="1494" height="106" key="GridCell.Tab.0.bottom" timestamp="1594946757172">
       <screen x="0" y="23" width="1536" height="882" />
     </state>
@@ -211,10 +219,10 @@
       <screen x="1792" y="23" width="1920" height="992" />
     </state>
     <state x="2261" y="158" key="SettingsEditor/1792.23.1920.992/0.0.1792.1120@1792.23.1920.992" timestamp="1593916212152" />
-    <state x="368" y="205" key="Vcs.Push.Dialog.v2" timestamp="1594946617885">
+    <state x="368" y="205" key="Vcs.Push.Dialog.v2" timestamp="1594947411219">
       <screen x="0" y="23" width="1536" height="882" />
     </state>
-    <state x="368" y="205" key="Vcs.Push.Dialog.v2/0.23.1536.882@0.23.1536.882" timestamp="1594946617885" />
+    <state x="368" y="205" key="Vcs.Push.Dialog.v2/0.23.1536.882@0.23.1536.882" timestamp="1594947411219" />
     <state x="422" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1594691793612">
       <screen x="0" y="23" width="1536" height="883" />
     </state>

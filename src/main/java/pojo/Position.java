@@ -23,6 +23,10 @@ public class Position {
     private String rskGrpSymb;
     private String rskFactSymb;
 
+    public Position() {
+        super();
+    }
+
 
     public Position(String busiDate, Long posnId, Long acctId, String positionTypeCode, Long viId, Double closePrice, Double unitOfTrade, Double grossLngQty, Double unsegLngQty, Double grossShtQty, Long cmoId, String cmoName, String fininstrSymb, String cusip, String putCallCode, Double strkPrce, String expDate, String rskGrpSymb, String rskFactSymb) {
         this.busiDate = busiDate;
