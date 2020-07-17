@@ -90,7 +90,7 @@ public class StreamingJob {
 			try {
 				ObjectMapper om = new ObjectMapper();
 				om.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
-				Position posn = om.convertValue(position, Position.class);
+				Position posn = om.readValue(position, Position.class);
 				System.out.println(posn.toString());
 				System.out.println(" Data in close price: "+posn.getClosePrice());
 				return  true;
