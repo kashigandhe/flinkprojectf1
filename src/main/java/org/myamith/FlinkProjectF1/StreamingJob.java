@@ -92,6 +92,7 @@ public class StreamingJob {
 				System.out.println(" Data in close price: "+posn.getClosePrice());
 				return  true;
 			} catch (Exception e){
+				e.printStackTrace();
 				System.out.println(" Issue with filtering data ");
 				throw new Exception();
 			}
