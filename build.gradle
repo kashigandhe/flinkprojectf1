@@ -63,6 +63,7 @@ configurations {
 
 // declare the dependencies for your production and test code
 dependencies {
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.2'
     // --------------------------------------------------------------
     // Compile-time dependencies that should NOT be part of the
     // shadow jar and are provided in the lib folder of Flink
