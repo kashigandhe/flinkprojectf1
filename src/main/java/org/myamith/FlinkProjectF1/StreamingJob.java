@@ -73,9 +73,9 @@ public class StreamingJob {
 		DataStream<String> stream = env
 				.addSource(new FlinkKafkaConsumer("testPositionTopic", new SimpleStringSchema(), properties));
 
-		//DataStream<String> stream1 = stream.filter(new bigClosePriceFilter());
+		DataStream<String> stream1 = stream.filter(new bigClosePriceFilter());
 
-		stream.print();
+		stream1.print();
 
 		// execute program
 		env.execute("Flink Streaming Java API Skeleton");
@@ -88,8 +88,9 @@ public class StreamingJob {
 			try {
 				ObjectMapper om = new ObjectMapper();
 				Position posn = om.readValue(position, Position.class);
-
-				return posn.getClosePrice() > 499.0;
+				System.out.println(posn.toString());
+				System.out.println(" Data in close price: "+posn.getClosePrice());
+				return  true;
 			} catch (Exception e){
 				System.out.println(" Issue with filtering data ");
 				throw new Exception();
