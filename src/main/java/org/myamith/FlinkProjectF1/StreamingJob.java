@@ -18,6 +18,7 @@
 
 package org.myamith.FlinkProjectF1;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import org.apache.flink.api.common.functions.FilterFunction;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 //import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.ObjectMapper;
@@ -88,6 +89,7 @@ public class StreamingJob {
 		public boolean filter(String position) throws Exception {
 			try {
 				ObjectMapper om = new ObjectMapper();
+				om.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
 				Position posn = om.convertValue(position, Position.class);
 				System.out.println(posn.toString());
 				System.out.println(" Data in close price: "+posn.getClosePrice());
