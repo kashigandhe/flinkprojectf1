@@ -75,9 +75,9 @@ public class StreamingJob {
 		DataStream<String> stream = env
 				.addSource(new FlinkKafkaConsumer("testPositionTopic", new SimpleStringSchema(), properties));
 
-		//DataStream<String> stream1 = stream.filter(new bigClosePriceFilter());
+		DataStream<String> stream1 = stream.filter(new bigClosePriceFilter());
 
-		stream.print();
+		stream1.print();
 
 		// execute program
 		env.execute("Flink Streaming Java API Skeleton");
