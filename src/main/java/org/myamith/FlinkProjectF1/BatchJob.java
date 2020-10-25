@@ -79,7 +79,7 @@ public class BatchJob {
 		wordCountResults.print();
 
 		// execute program
-		env.execute("Flink Batch Java API Skeleton");
+		//env.execute("Flink Batch Java API Skeleton");
 	}
 
 	static class LineSplitter implements FlatMapFunction<String, Tuple2<String, Integer>> {
