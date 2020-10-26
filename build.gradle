@@ -18,7 +18,7 @@ plugins {
 // artifact properties
 group = 'org.myamith.FlinkProjectF1'
 version = '0.1-SNAPSHOT'
-mainClassName = 'org.myamith.FlinkProjectF1.StreamingJob'
+mainClassName = 'org.myamith.FlinkProjectF1.PositionPriceStream'
 description = """Flink Quickstart Job"""
 
 ext {
