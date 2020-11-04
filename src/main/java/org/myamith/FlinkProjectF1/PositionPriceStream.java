@@ -27,9 +27,9 @@ public class PositionPriceStream {
 
         DataStream<String> textPriceLine = env.socketTextStream("localhost", 9999); // price
 
-        DataStream<Tuple4<Integer, Integer, Double, String>>  posnStr = textPositionsLine.map(new PositionSplitter());
+        DataStream<Tuple4<String, Integer, Integer, Double>>  posnStr = textPositionsLine.map(new PositionSplitter());
 
-        DataStream<Tuple3<Integer, Integer, String>> priceStr = textPriceLine.map(new PriceSplitter());
+        DataStream<Tuple3<String, Integer, Integer>> priceStr = textPriceLine.map(new PriceSplitter());
 
         posnStr.print();
         priceStr.print();
@@ -38,23 +38,23 @@ public class PositionPriceStream {
 
     }
 
-    public static class PositionSplitter implements MapFunction<String, Tuple4<Integer, Integer, Double, String>>
+    public static class PositionSplitter implements MapFunction<String, Tuple4<String,Integer, Integer, Double>>
     {
-        public Tuple4<Integer, Integer, Double, String> map(String value)
+        public Tuple4<String, Integer, Integer, Double> map(String value)
         {
             String[] words = value.split(",");
-            return new Tuple4<Integer, Integer, Double, String>(Integer.parseInt(words[0]),Integer.parseInt(words[1]),
-                    Double.parseDouble(words[2]),(new Date()).toString());
+            return new Tuple4<String,Integer, Integer, Double>(words[0],Integer.parseInt(words[1]),Integer.parseInt(words[2]),
+                    Double.parseDouble(words[3]));
         }
     }
 
-    public static class PriceSplitter implements MapFunction<String, Tuple3<Integer, Integer, String>>
+    public static class PriceSplitter implements MapFunction<String, Tuple3<String, Integer, Integer>>
     {
-        public Tuple3<Integer, Integer, String> map(String value)
+        public Tuple3<String, Integer, Integer> map(String value)
         {
             String[] words = value.split(",");
-            return new Tuple3<Integer, Integer, String>(Integer.parseInt(words[0]),
-                    Integer.parseInt(words[1]),(new Date()).toString());
+            return new Tuple3<String, Integer, Integer>(words[0], Integer.parseInt(words[1]),
+                    Integer.parseInt(words[2]));
         }
     }
 
